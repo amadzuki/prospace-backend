@@ -2,8 +2,10 @@
 CREATE TABLE "Company" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "address" TEXT,
-    "revenue" BIGINT,
+    "address" TEXT NOT NULL,
+    "revenue" INTEGER NOT NULL,
+    "phoneCode" TEXT NOT NULL,
+    "phoneNumber" TEXT NOT NULL,
 
     CONSTRAINT "Company_pkey" PRIMARY KEY ("id")
 );
@@ -12,7 +14,8 @@ CREATE TABLE "Company" (
 CREATE TABLE "Office" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "location" TEXT NOT NULL,
+    "locationLat" TEXT NOT NULL,
+    "locationLang" TEXT NOT NULL,
     "startDate" TIMESTAMP(3) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
@@ -20,9 +23,6 @@ CREATE TABLE "Office" (
 
     CONSTRAINT "Office_pkey" PRIMARY KEY ("id")
 );
-
--- CreateIndex
-CREATE UNIQUE INDEX "Company_name_key" ON "Company"("name");
 
 -- AddForeignKey
 ALTER TABLE "Office" ADD CONSTRAINT "Office_companyId_fkey" FOREIGN KEY ("companyId") REFERENCES "Company"("id") ON DELETE SET NULL ON UPDATE CASCADE;

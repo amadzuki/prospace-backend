@@ -8,20 +8,23 @@ datasource db {
 }
 
 model Company {
-  id      Int      @id @default(autoincrement())
-  name    String   @unique
-  address String?
-  revenue BigInt?
-  offices Office[]
+  id          Int      @id @default(autoincrement())
+  name        String
+  address     String
+  revenue     Int
+  phoneCode   String
+  phoneNumber String
+  offices     Office[]
 }
 
 model Office {
-  id        Int      @id @default(autoincrement())
-  name      String
-  location  String
-  startDate DateTime
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  Company   Company? @relation(fields: [companyId], references: [id])
-  companyId Int?
+  id           Int      @id @default(autoincrement())
+  name         String
+  locationLat  String
+  locationLang String
+  startDate    DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  Company      Company? @relation(fields: [companyId], references: [id])
+  companyId    Int?
 }
