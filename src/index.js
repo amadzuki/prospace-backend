@@ -40,13 +40,13 @@ app.post('/companies', async (req, res) => {
 })
 
 app.post('/offices', async (req, res) => {
-  const { name, lat, lang, startDate, companyId } = req.body
+  const { name, lat, long, startDate, companyId } = req.body
 
   const newOffice = await prisma.office.create({
     data: {
       name,
       locationLat: lat,
-      locationLang: lang,
+      locationLong: long,
       startDate,
       Company: { connect: { id: +companyId } },
     },

@@ -24,7 +24,7 @@ Content-Type: application/json
 {
   "name": "Apple HQ",
   "lat": "432.21",
-  "lang": "110.11",
+  "long": "110.11",
   "startDate": "2012-04-23T18:25:43.511Z",
   "companyId": 1
 }

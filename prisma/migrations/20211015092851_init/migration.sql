@@ -15,7 +15,7 @@ CREATE TABLE "Office" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "locationLat" TEXT NOT NULL,
-    "locationLang" TEXT NOT NULL,
+    "locationLong" TEXT NOT NULL,
     "startDate" TIMESTAMP(3) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updatedAt" TIMESTAMP(3) NOT NULL,
