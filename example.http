@@ -1,1 +1,30 @@
-GET http://localhost:4000/
+### Get Companies
+GET http://localhost:4000/companies
+
+### Get Offices
+GET http://localhost:4000/offices/1
+
+### Add new Company
+POST http://localhost:4000/companies
+Content-Type: application/json
+
+{
+  "name": "Apple",
+  "address": "1 Apple Park Way",
+  "revenue": 9944499339922,
+  "phoneCode": "432",
+  "phoneNumber": "44422211"  
+}
+
+
+### Add new Office
+POST http://localhost:4000/offices
+Content-Type: application/json
+
+{
+  "name": "Apple HQ",
+  "lat": "432.21",
+  "lang": "110.11",
+  "startDate": "2012-04-23T18:25:43.511Z",
+  "companyId": 1
+}
