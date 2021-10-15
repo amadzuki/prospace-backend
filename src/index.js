@@ -55,7 +55,9 @@ app.post('/offices', async (req, res) => {
   res.status(200).json({ message: 'New office added', data: newOffice })
 })
 
-const server = app.listen(4000, () =>
+const PORT = process.env.PORT || 4000
+
+const server = app.listen(PORT, () =>
   console.log(`
 🚀 Server ready at: http://localhost:4000`)
 )
