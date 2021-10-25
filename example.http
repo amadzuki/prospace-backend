@@ -2,7 +2,7 @@
 GET http://localhost:4000/companies
 
 ### Get Offices
-GET http://localhost:4000/offices/1
+GET http://localhost:4000/offices/2
 
 ### Add new Company
 POST http://localhost:4000/companies
@@ -28,3 +28,9 @@ Content-Type: application/json
   "startDate": "2012-04-23T18:25:43.511Z",
   "companyId": 1
 }
+
+### Delete a company (cascade)
+DELETE http://localhost:4000/companies/1
+
+### Delete an Office
+DELETE http://localhost:4000/offices/1

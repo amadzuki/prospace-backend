@@ -25,6 +25,6 @@ model Office {
   startDate    DateTime
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
-  Company      Company? @relation(fields: [companyId], references: [id])
+  Company      Company? @relation(fields: [companyId], references: [id], onDelete: Cascade, onUpdate: Cascade)
   companyId    Int?
 }

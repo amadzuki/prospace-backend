@@ -55,6 +55,20 @@ app.post('/offices', async (req, res) => {
   res.status(200).json({ message: 'New office added', data: newOffice })
 })
 
+app.delete('/offices/:id', async (req, res) => {
+  const deletedOffice = await prisma.office.delete({
+    where: { id: +req.params.id },
+  })
+  res.status(200).json({ deletedOffice })
+})
+
+app.delete('/companies/:id', async (req, res) => {
+  const deletedCompany = await prisma.company.delete({
+    where: { id: +req.params.id },
+  })
+  res.status(200).json({ deletedCompany })
+})
+
 const PORT = process.env.PORT || 4000
 
 const server = app.listen(PORT, () =>
